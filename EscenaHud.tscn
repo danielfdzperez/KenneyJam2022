@@ -2,7 +2,6 @@
 
 
 [ext_resource path="res://FuncionalidadHud.gd" type="Script" id=1]
-=======
 
 [ext_resource path="res://Kenney_Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://recursos/PNG/Tiles/Terrain/Grass/grass_05.png" type="Texture" id=3]

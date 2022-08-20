@@ -20,11 +20,11 @@ func pila():
 
 		var odds = rng.randf_range(0,4)
 		if odds < 2:
-			Pilas.append("Verde")
+			Pilas.append(1)
 		elif odds>2 && odds <= 3:
-			Pilas.append("Marron")
+			Pilas.append(2)
 		else:
-			Pilas.append("Gris")
+			Pilas.append(3)
 
 
 		
@@ -40,6 +40,7 @@ func _process(delta):
 
 func ManoPlayer(Pila,i):
 	var tipoFicha = Pila.pop_front()
+<<<<<<< Updated upstream:FuncionalidadHud.gd
 	
 	match i:
 		0:
@@ -69,6 +70,18 @@ func ManoPlayer(Pila,i):
 				$Panel/Opcion2.texture_normal = PiezaGris
 			else:
 				pass
+=======
+	if tipoFicha == 1:
+		$Panel/Opcion0.texture_normal = PiezaVerde
+	elif tipoFicha == 2:
+		$Panel/Opcion0.texture_normal = PiezaMarron
+	elif tipoFicha == 3:
+
+		$Panel/Opcion0.texture_normal = PiezaGris
+	else:
+
+		pass
+>>>>>>> Stashed changes:Scripts/FuncionalidadHud.gd
 		
 	
 	

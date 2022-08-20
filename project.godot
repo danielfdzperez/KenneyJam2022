@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Ficha",
+"language": "GDScript",
+"path": "res://Scripts/Fichas/Ficha.gd"
+}, {
+"base": "Ficha",
+"class": "FichaGris",
+"language": "GDScript",
+"path": "res://Scripts/Fichas/FichaGris.gd"
+}, {
+"base": "Ficha",
+"class": "FichaMarron",
+"language": "GDScript",
+"path": "res://Scripts/Fichas/FichaMarron.gd"
+}, {
+"base": "Ficha",
+"class": "FichaVerde",
+"language": "GDScript",
+"path": "res://Scripts/Fichas/FichaVerde.gd"
+} ]
+_global_script_class_icons={
+"Ficha": "",
+"FichaGris": "",
+"FichaMarron": "",
+"FichaVerde": ""
+}
+
 [application]
 
 config/name="Nombre"

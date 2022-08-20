@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://FuncionalidadHud.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/FuncionalidadHud.gd" type="Script" id=1]
 [ext_resource path="res://Kenney_Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://icon_pila.png" type="Texture" id=4]
 [ext_resource path="res://recursos/PNG/Tiles/Terrain/Grass/grass_04.png" type="Texture" id=7]
@@ -49,6 +49,35 @@ margin_left = 388.0
 margin_top = 387.0
 margin_right = 623.0
 margin_bottom = 573.0
+
+[node name="Opcion0" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
+margin_left = 14.0
+margin_top = 70.0
+margin_right = 134.0
+margin_bottom = 210.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 9 )
+
+[node name="Opcion1" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
+margin_left = 87.0
+margin_top = 70.0
+margin_right = 207.0
+margin_bottom = 210.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Opcion2" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
+margin_left = 167.0
+margin_top = 68.0
+margin_right = 287.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 11 )
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="HUD/GridContainer/Panel/YSort/Mano"]
 anchor_left = 0.013
@@ -101,6 +130,7 @@ text = "288.88
 [node name="Sprite" type="Sprite" parent="HUD/GridContainer/Panel/Puntuacion"]
 position = Vector2( 152, 31 )
 texture = ExtResource( 10 )
+<<<<<<< Updated upstream
 
 [node name="Opcion0" type="TextureButton" parent="HUD/GridContainer/Panel"]
 margin_left = 402.0
@@ -127,3 +157,5 @@ margin_bottom = 595.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture_pressed = ExtResource( 11 )
 stretch_mode = 6
+=======
+>>>>>>> Stashed changes

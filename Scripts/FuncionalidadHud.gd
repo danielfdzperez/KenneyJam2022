@@ -7,7 +7,7 @@ var ficha_gris = preload("res://Scripts/Fichas/FichaGris.gd")
 var rng = RandomNumberGenerator.new()
 
 
-var PilaSize = 15
+var PilaSize = 102
 
 
 var Pilas= []
@@ -33,7 +33,9 @@ func pila():
 func _ready():
 	pila()
 	for i in range(3):
+		print("recibo  el click" , i)
 		ManoPlayer(Pilas,i)
+		
 		
 func _process(delta):
 	NumeroPila()
@@ -45,12 +47,19 @@ func ManoPlayer(Pila,i):
 		0:
 			if tipoFicha == 1:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_verde.new())
+				print("recibo  el click")
+				#$Panel/YSort/Mano/Opcion0.texture_focused = false
 			elif tipoFicha == 2:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_marron.new())
+				print("recibo  el click")
+				#$Panel/YSort/Mano/Opcion0.texture_focused = false
 			elif tipoFicha == 3:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_gris.new())
+				print("recibo  el click")
+				#$Panel/YSort/Mano/Opcion0.texture_focused = false
 			else:
 				pass
+			
 		1:
 			if tipoFicha == 1:
 				$Panel/YSort/Mano/Opcion1.add_child(ficha_verde.new())

@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/FuncionalidadHud.gd" type="Script" id=1]
 [ext_resource path="res://Kenney_Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://icon_pila.png" type="Texture" id=4]
-[ext_resource path="res://recursos/PNG/Tiles/Terrain/Grass/grass_04.png" type="Texture" id=7]
 [ext_resource path="res://recursos/PNG/Tiles/Terrain/Stone/stone_03.png" type="Texture" id=8]
-[ext_resource path="res://recursos/PNG/Tiles/Mill/mill_crane.png" type="Texture" id=9]
 [ext_resource path="res://recursos/PNG/Objects/treePine_large.png" type="Texture" id=10]
 [ext_resource path="res://recursos/PNG/Tiles/Terrain/Dirt/dirt_16.png" type="Texture" id=11]
 
@@ -56,8 +54,6 @@ margin_top = 70.0
 margin_right = 134.0
 margin_bottom = 210.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_hover = ExtResource( 7 )
-texture_focused = ExtResource( 9 )
 
 [node name="Opcion1" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
 margin_left = 87.0

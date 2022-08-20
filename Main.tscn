@@ -9,7 +9,10 @@
 
 [node name="Cam" type="Camera2D" parent="."]
 current = true
+
+=======
 zoom = Vector2( 2, 2 )
+
 script = ExtResource( 4 )
 
 [node name="Map" type="TileMap" parent="."]

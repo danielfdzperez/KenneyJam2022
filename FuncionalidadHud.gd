@@ -32,26 +32,52 @@ func pila():
 
 func _ready():
 	pila()
-	ManoPlayer(Pilas)
-
+	for i in range(3):
+		ManoPlayer(Pilas,i)
+		
 func _process(delta):
 	NumeroPila()
 
-func ManoPlayer(Pila):
+func ManoPlayer(Pila,i):
 	var tipoFicha = Pila.pop_front()
-	if tipoFicha == "Verde":
-		$Panel/Opcion0.texture_normal = PiezaVerde
-	elif tipoFicha == "Marron":
-		$Panel/Opcion0.texture_normal = PiezaMarron
-	elif tipoFicha == "Gris":
-
-		$Panel/Opcion0.texture_normal = PiezaGris
-	else:
-
-		pass
+	
+	match i:
+		0:
+			if tipoFicha == 1:
+				$Panel/Opcion0.texture_normal = PiezaVerde
+			elif tipoFicha == 2:
+				$Panel/Opcion0.texture_normal = PiezaMarron
+			elif tipoFicha == 3:
+				$Panel/Opcion0.texture_normal = PiezaGris
+			else:
+				pass
+		1:
+			if tipoFicha == 1:
+				$Panel/Opcion1.texture_normal = PiezaVerde
+			elif tipoFicha == 2:
+				$Panel/Opcion1.texture_normal = PiezaMarron
+			elif tipoFicha == 3:
+				$Panel/Opcion1.texture_normal = PiezaGris
+			else:
+				pass
+		2:
+			if tipoFicha == 1:
+				$Panel/Opcion2.texture_normal = PiezaVerde
+			elif tipoFicha == 2:
+				$Panel/Opcion2.texture_normal = PiezaMarron
+			elif tipoFicha == 3:
+				$Panel/Opcion2.texture_normal = PiezaGris
+			else:
+				pass
+		
+	
+	
 		
 
 func NumeroPila():
 	$Panel/YSort/Pila/numPila.text = str(Pilas.size())
 	pass
 
+func ColocaFicha():
+	
+	pass

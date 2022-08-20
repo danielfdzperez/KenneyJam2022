@@ -9,12 +9,15 @@ var rng = RandomNumberGenerator.new()
 
 var PilaSize = 15
 
+
 var Pilas= []
+
 
 
 func pila():
 	for i in range(PilaSize):
 		rng.randomize()
+
 		var odds = rng.randf_range(0,4)
 		if odds < 2:
 			Pilas.append("Verde")
@@ -22,6 +25,7 @@ func pila():
 			Pilas.append("Marron")
 		else:
 			Pilas.append("Gris")
+
 
 		
 		print(Pilas[i])
@@ -38,8 +42,10 @@ func ManoPlayer(Pila):
 	elif tipoFicha == "Marron":
 		$Panel/Opcion0.texture_normal = PiezaMarron
 	elif tipoFicha == "Gris":
+
 		$Panel/Opcion0.texture_normal = PiezaGris
 	else:
+
 		pass
 		
 		

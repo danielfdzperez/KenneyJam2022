@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileshex.png-c297d25c79ec098d93a3fa168b916070.stex"
+path="res://.import/basic_terrains.png-b543722c6e938086cee1ed6ead127983.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/tileshex.png"
-dest_files=[ "res://.import/tileshex.png-c297d25c79ec098d93a3fa168b916070.stex" ]
+source_file="res://recursos/basic_terrains.png"
+dest_files=[ "res://.import/basic_terrains.png-b543722c6e938086cee1ed6ead127983.stex" ]
 
 [params]
 

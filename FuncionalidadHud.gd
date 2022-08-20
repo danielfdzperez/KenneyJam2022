@@ -8,9 +8,7 @@ var rng = RandomNumberGenerator.new()
 
 
 var PilaSize = 15
-
 var Pilas:PoolStringArray  = []
-
 
 func pila():
 	for i in range(PilaSize):
@@ -22,14 +20,12 @@ func pila():
 			PilaSize[i] == "Marron"
 		elif odds<0.75:
 			PilaSize[i] == "Gris"
-
 		
 	print(Pilas)
-
+#
 func _ready():
 	pila()
 	ManoPlayer(Pilas)
-
 
 func ManoPlayer(Pila):
 	var tipoFicha = Pila.pop_front()

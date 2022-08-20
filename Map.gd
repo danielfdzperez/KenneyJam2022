@@ -11,7 +11,7 @@ func _ready():
 		set_cellv(i, 0)
 	update_map()
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
 		if get_cellv(lmp) == 0:
 			set_cellv(lmp, 1)

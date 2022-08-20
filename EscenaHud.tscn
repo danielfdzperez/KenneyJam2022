@@ -31,9 +31,6 @@ anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Panel" type="Panel" parent="HUD/GridContainer"]
 modulate = Color( 0.996078, 0.964706, 0.964706, 1 )

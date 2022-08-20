@@ -30,11 +30,21 @@ func update_map():
 			add_child(t)
 
 func get_neighbours(pos: Vector2) -> Array:
-	var n = [Vector2(-1, -1) + pos,
+	if int(pos.y) % 2 != 0:
+		var n = [Vector2(0, -1) + pos,
+			Vector2(1, -1) + pos,
+			Vector2(1, 0) + pos,
+			Vector2(1, 1) + pos,
+			Vector2(0, 1) + pos,
+			Vector2(-1, 0) + pos,]
+		return n
+	
+	else:
+		var n = [Vector2(-1, -1) + pos,
 			Vector2(0, -1) + pos,
 			Vector2(1, 0) + pos,
 			Vector2(0, 1) + pos,
 			Vector2(-1, 1) + pos,
 			Vector2(-1, 0) + pos,]
-	return n
+		return n
 

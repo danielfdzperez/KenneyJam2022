@@ -34,6 +34,8 @@ func _ready():
 	pila()
 	ManoPlayer(Pilas)
 
+func _process(delta):
+	NumeroPila()
 
 func ManoPlayer(Pila):
 	var tipoFicha = Pila.pop_front()
@@ -48,5 +50,8 @@ func ManoPlayer(Pila):
 
 		pass
 		
-		
+
+func NumeroPila():
+	$Panel/YSort/Pila/numPila.text = str(Pilas.size())
+	pass
 

@@ -11,7 +11,7 @@ func _ready():
 		set_cellv(i, 0)
 	update_map()
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
 		if get_cellv(lmp) == 0:
 			set_cellv(lmp, 1)
@@ -30,11 +30,21 @@ func update_map():
 			add_child(t)
 
 func get_neighbours(pos: Vector2) -> Array:
-	var n = [Vector2(-1, -1) + pos,
+	if int(pos.y) % 2 != 0:
+		var n = [Vector2(0, -1) + pos,
+			Vector2(1, -1) + pos,
+			Vector2(1, 0) + pos,
+			Vector2(1, 1) + pos,
+			Vector2(0, 1) + pos,
+			Vector2(-1, 0) + pos,]
+		return n
+	
+	else:
+		var n = [Vector2(-1, -1) + pos,
 			Vector2(0, -1) + pos,
 			Vector2(1, 0) + pos,
 			Vector2(0, 1) + pos,
 			Vector2(-1, 1) + pos,
 			Vector2(-1, 0) + pos,]
-	return n
+		return n
 

@@ -8,18 +8,18 @@ var rng = RandomNumberGenerator.new()
 
 
 var PilaSize = 15
-var PruebaPila = [""]
+var PruebaPila: PoolStringArray = [""]
 
 func pila():
 	for i in range(PilaSize):
 		rng.randomize()
 		var odds = rng.randf_range(0,3)
 		if odds <= 1:
-			PilaSize[i].append("Verde")
+			PruebaPila.append("Verde")
 		elif odds>1 && odds<2:
-			PilaSize[i].append("Marron")
+			PruebaPila.append("Marron")
 		elif odds<2:
-			PilaSize[i].append("Gris")
+			PruebaPila.append("Gris")
 
 func _ready():
 	pila()
@@ -33,6 +33,8 @@ func ManoPlayer(Pila):
 		$Opcion0.texture_normal = PiezaMarron
 	elif tipoFicha == "Gris":
 		$Opcion0.texture_normal = PiezaGris
+	elif tipoFicha == "" or tipoFicha == null:
+		pass
 		
 		
 

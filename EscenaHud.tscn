@@ -56,7 +56,6 @@ margin_top = 70.0
 margin_right = 134.0
 margin_bottom = 210.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 7 )
 texture_focused = ExtResource( 9 )
 
@@ -66,7 +65,6 @@ margin_top = 70.0
 margin_right = 207.0
 margin_bottom = 210.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 8 )
 
 [node name="Opcion2" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
@@ -75,7 +73,6 @@ margin_top = 68.0
 margin_right = 287.0
 margin_bottom = 208.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 11 )
 stretch_mode = 6
 
@@ -130,32 +127,3 @@ text = "288.88
 [node name="Sprite" type="Sprite" parent="HUD/GridContainer/Panel/Puntuacion"]
 position = Vector2( 152, 31 )
 texture = ExtResource( 10 )
-<<<<<<< Updated upstream
-
-[node name="Opcion0" type="TextureButton" parent="HUD/GridContainer/Panel"]
-margin_left = 402.0
-margin_top = 457.0
-margin_right = 522.0
-margin_bottom = 597.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_hover = ExtResource( 7 )
-texture_focused = ExtResource( 9 )
-
-[node name="Opcion1" type="TextureButton" parent="HUD/GridContainer/Panel"]
-margin_left = 475.0
-margin_top = 457.0
-margin_right = 595.0
-margin_bottom = 597.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_pressed = ExtResource( 8 )
-
-[node name="Opcion2" type="TextureButton" parent="HUD/GridContainer/Panel"]
-margin_left = 555.0
-margin_top = 455.0
-margin_right = 675.0
-margin_bottom = 595.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_pressed = ExtResource( 11 )
-stretch_mode = 6
-=======
->>>>>>> Stashed changes

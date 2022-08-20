@@ -1,8 +1,8 @@
 extends GridContainer
 
-var PiezaVerde = preload("res://recursos/PNG/Tiles/Terrain/Grass/grass_08.png")
-var PiezaMarron = preload("res://recursos/PNG/Tiles/Terrain/Dirt/dirt_06.png")
-var PiezaGris = preload("res://recursos/PNG/Tiles/Terrain/Stone/stone_07.png")
+var ficha_verde = preload("res://Scripts/Fichas/FichaVerde.gd")
+var ficha_marron = preload("res://Scripts/Fichas/FichaMarron.gd")
+var ficha_gris = preload("res://Scripts/Fichas/FichaGris.gd")
 
 var rng = RandomNumberGenerator.new()
 
@@ -40,48 +40,35 @@ func _process(delta):
 
 func ManoPlayer(Pila,i):
 	var tipoFicha = Pila.pop_front()
-<<<<<<< Updated upstream:FuncionalidadHud.gd
 	
 	match i:
 		0:
 			if tipoFicha == 1:
-				$Panel/Opcion0.texture_normal = PiezaVerde
+				$Panel/YSort/Mano/Opcion0.add_child(ficha_verde.new())
 			elif tipoFicha == 2:
-				$Panel/Opcion0.texture_normal = PiezaMarron
+				$Panel/YSort/Mano/Opcion0.add_child(ficha_marron.new())
 			elif tipoFicha == 3:
-				$Panel/Opcion0.texture_normal = PiezaGris
+				$Panel/YSort/Mano/Opcion0.add_child(ficha_gris.new())
 			else:
 				pass
 		1:
 			if tipoFicha == 1:
-				$Panel/Opcion1.texture_normal = PiezaVerde
+				$Panel/YSort/Mano/Opcion1.add_child(ficha_verde.new())
 			elif tipoFicha == 2:
-				$Panel/Opcion1.texture_normal = PiezaMarron
+				$Panel/YSort/Mano/Opcion1.add_child(ficha_marron.new())
 			elif tipoFicha == 3:
-				$Panel/Opcion1.texture_normal = PiezaGris
+				$Panel/YSort/Mano/Opcion1.add_child(ficha_gris.new())
 			else:
 				pass
 		2:
 			if tipoFicha == 1:
-				$Panel/Opcion2.texture_normal = PiezaVerde
+				$Panel/YSort/Mano/Opcion2.add_child(ficha_verde.new())
 			elif tipoFicha == 2:
-				$Panel/Opcion2.texture_normal = PiezaMarron
+				$Panel/YSort/Mano/Opcion2.add_child(ficha_marron.new())
 			elif tipoFicha == 3:
-				$Panel/Opcion2.texture_normal = PiezaGris
+				$Panel/YSort/Mano/Opcion2.add_child(ficha_gris.new())
 			else:
 				pass
-=======
-	if tipoFicha == 1:
-		$Panel/Opcion0.texture_normal = PiezaVerde
-	elif tipoFicha == 2:
-		$Panel/Opcion0.texture_normal = PiezaMarron
-	elif tipoFicha == 3:
-
-		$Panel/Opcion0.texture_normal = PiezaGris
-	else:
-
-		pass
->>>>>>> Stashed changes:Scripts/FuncionalidadHud.gd
 		
 	
 	

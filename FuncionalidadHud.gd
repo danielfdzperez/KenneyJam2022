@@ -8,18 +8,18 @@ var rng = RandomNumberGenerator.new()
 
 
 var PilaSize = 15
-var PoolStringArray  = []
+var PruebaPila = [""]
 
 func pila():
 	for i in range(PilaSize):
 		rng.randomize()
-		var odds = rng.randf_range(0,1)
-		if odds <= 0.50:
-			PilaSize[i] == "Verde"
-		elif odds>0.5 && odds<0.75:
-			PilaSize[i] == "Marron"
-		elif odds<0.75:
-			PilaSize[i] == "Gris"
+		var odds = rng.randf_range(0,3)
+		if odds <= 1:
+			PilaSize[i].append("Verde")
+		elif odds>1 && odds<2:
+			PilaSize[i].append("Marron")
+		elif odds<2:
+			PilaSize[i].append("Gris")
 
 func _ready():
 	pila()

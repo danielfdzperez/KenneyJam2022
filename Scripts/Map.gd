@@ -14,7 +14,12 @@ func _ready():
 		for j in map_size.y:
 			self.set_cell(i+1, j+1, 0)
 	set_cellv(map_size/2, 1)
-	update_map()
+	for i in get_used_cells():
+		if tiles.count(i) == 0:
+			tiles.append(i)
+			var t = tile.instance()
+			t.position = map_to_world(i)
+			add_child(t)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
@@ -25,17 +30,8 @@ func _unhandled_input(event):
 					print(i)
 					set_cellv(cmp, selected_tile)
 					print(selected_tile)
-					update_map()
-			
-#		print(lmp)
-		
-func update_map():
-	for i in get_used_cells():
-		if tiles.count(i) == 0:
-			tiles.append(i)
-			var t = tile.instance()
-			t.position = map_to_world(i)
-			add_child(t)
+					if HUD.hand.get_child(HUD.button_pressed).get_child(0) != null:
+						HUD.hand.get_child(HUD.button_pressed).get_child(0).queue_free()
 
 func get_neighbours(pos: Vector2) -> Array:
 	if int(pos.y) % 2 != 0:

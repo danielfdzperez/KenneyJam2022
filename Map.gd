@@ -19,7 +19,7 @@ func _unhandled_input(event):
 				if get_cellv(i) == -1:
 					set_cellv(i, 0)
 			update_map()
-		print(lmp)
+#		print(lmp)
 		
 func update_map():
 	for i in get_used_cells():

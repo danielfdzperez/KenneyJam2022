@@ -9,4 +9,4 @@ func _ready():
 func _on_Tile_mouse_entered():
 	var pos = $Center.global_position
 	get_parent().lmp = map.world_to_map(map.to_local(pos))
-	print(get_parent().lmp)
+#	print(get_parent().lmp)

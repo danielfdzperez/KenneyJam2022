@@ -8,22 +8,24 @@ var rng = RandomNumberGenerator.new()
 
 
 var PilaSize = 15
-#var PoolStringArray  = []
+var Pilas:PoolStringArray  = []
 
-#func pila():
-#	for i in range(PilaSize):
-#		rng.randomize()
-#		var odds = rng.randf_range(0,1)
-#		if odds <= 0.50:
-#			PilaSize[i] == "Verde"
-#		elif odds>0.5 && odds<0.75:
-#			PilaSize[i] == "Marron"
-#		elif odds<0.75:
-#			PilaSize[i] == "Gris"
+func pila():
+	for i in range(PilaSize):
+		rng.randomize()
+		var odds = rng.randf_range(0,1)
+		if odds <= 0.50:
+			PilaSize[i] == "Verde"
+		elif odds>0.5 && odds<0.75:
+			PilaSize[i] == "Marron"
+		elif odds<0.75:
+			PilaSize[i] == "Gris"
+		
+	print(Pilas)
 #
-#func _ready():
-#	pila()
-##	ManoPlayer(PruebaPila)
+func _ready():
+	pila()
+	ManoPlayer(Pilas)
 
 func ManoPlayer(Pila):
 	var tipoFicha = Pila.pop_front()

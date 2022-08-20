@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/FuncionalidadHud.gd" type="Script" id=1]
 [ext_resource path="res://Kenney_Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://icon_pila.png" type="Texture" id=4]
-[ext_resource path="res://recursos/PNG/Tiles/Terrain/Stone/stone_03.png" type="Texture" id=8]
 [ext_resource path="res://recursos/PNG/Objects/treePine_large.png" type="Texture" id=10]
-[ext_resource path="res://recursos/PNG/Tiles/Terrain/Dirt/dirt_16.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -16,12 +14,7 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
-[node name="Node2D" type="Control"]
-mouse_filter = 2
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="GridContainer" type="GridContainer" parent="HUD"]
+[node name="GridContainer" type="GridContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -29,7 +22,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource( 1 )
 
-[node name="Panel" type="Panel" parent="HUD/GridContainer"]
+[node name="Panel" type="Panel" parent="."]
 modulate = Color( 0.996078, 0.964706, 0.964706, 1 )
 self_modulate = Color( 0.278431, 0.882353, 0.109804, 1 )
 margin_right = 1024.0
@@ -40,50 +33,48 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 3 )
 
-[node name="YSort" type="YSort" parent="HUD/GridContainer/Panel"]
+[node name="YSort" type="YSort" parent="Panel"]
 
-[node name="Mano" type="Panel" parent="HUD/GridContainer/Panel/YSort"]
+[node name="Mano" type="Panel" parent="Panel/YSort"]
 margin_left = 388.0
 margin_top = 387.0
 margin_right = 623.0
 margin_bottom = 573.0
 
-[node name="Opcion0" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
-margin_left = 14.0
-margin_top = 70.0
-margin_right = 134.0
-margin_bottom = 210.0
-rect_scale = Vector2( 0.5, 0.5 )
-
-[node name="Opcion1" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
-margin_left = 87.0
-margin_top = 70.0
-margin_right = 207.0
-margin_bottom = 210.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_pressed = ExtResource( 8 )
-
-[node name="Opcion2" type="TextureButton" parent="HUD/GridContainer/Panel/YSort/Mano"]
-margin_left = 167.0
+[node name="Opcion0" type="CheckBox" parent="Panel/YSort/Mano"]
 margin_top = 68.0
-margin_right = 287.0
+margin_right = 136.0
 margin_bottom = 208.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_pressed = ExtResource( 11 )
-stretch_mode = 6
+action_mode = 0
+keep_pressed_outside = true
 
-[node name="Label" type="Label" parent="HUD/GridContainer/Panel/YSort/Mano"]
+[node name="Opcion1" type="CheckBox" parent="Panel/YSort/Mano"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 222.0
+margin_bottom = 212.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Opcion2" type="CheckBox" parent="Panel/YSort/Mano"]
+margin_left = 135.0
+margin_top = 68.0
+margin_right = 255.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="Panel/YSort/Mano"]
 anchor_left = 0.013
 anchor_right = 0.706
 anchor_bottom = 0.149
-margin_left = 0.945
-margin_top = 7.0
-margin_right = 1.09
-margin_bottom = 143.286
+margin_left = 32.945
+margin_top = 4.0
+margin_right = 33.09
+margin_bottom = 140.286
 text = "Hola soy la mano  jeje
 "
 
-[node name="Pila" type="Panel" parent="HUD/GridContainer/Panel/YSort"]
+[node name="Pila" type="Panel" parent="Panel/YSort"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = 5.0
@@ -91,27 +82,27 @@ margin_top = 461.0
 margin_right = 155.0
 margin_bottom = 611.0
 
-[node name="Sprite" type="Sprite" parent="HUD/GridContainer/Panel/YSort/Pila"]
+[node name="Sprite" type="Sprite" parent="Panel/YSort/Pila"]
 position = Vector2( 80, 78 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
-[node name="numPila" type="Label" parent="HUD/GridContainer/Panel/YSort/Pila"]
+[node name="numPila" type="Label" parent="Panel/YSort/Pila"]
 margin_left = 12.0
 margin_top = 89.0
 margin_right = 155.0
-margin_bottom = 202.0
+margin_bottom = 196.0
 custom_fonts/font = SubResource( 1 )
 text = "33
 "
 
-[node name="Puntuacion" type="Panel" parent="HUD/GridContainer/Panel"]
+[node name="Puntuacion" type="Panel" parent="Panel"]
 margin_left = 825.0
 margin_top = 12.0
 margin_right = 1028.0
 margin_bottom = 77.0
 
-[node name="ecopuntos" type="Label" parent="HUD/GridContainer/Panel/Puntuacion"]
+[node name="ecopuntos" type="Label" parent="Panel/Puntuacion"]
 margin_left = 15.0
 margin_top = 16.0
 margin_right = 103.0
@@ -120,6 +111,10 @@ custom_fonts/font = SubResource( 2 )
 text = "288.88
 "
 
-[node name="Sprite" type="Sprite" parent="HUD/GridContainer/Panel/Puntuacion"]
+[node name="Sprite" type="Sprite" parent="Panel/Puntuacion"]
 position = Vector2( 152, 31 )
 texture = ExtResource( 10 )
+
+[connection signal="pressed" from="Panel/YSort/Mano/Opcion0" to="." method="_on_Opcion0_pressed"]
+[connection signal="pressed" from="Panel/YSort/Mano/Opcion1" to="." method="_on_Opcion1_pressed"]
+[connection signal="pressed" from="Panel/YSort/Mano/Opcion2" to="." method="_on_Opcion2_pressed"]

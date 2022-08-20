@@ -4,6 +4,11 @@ var ficha_verde = preload("res://Scripts/Fichas/FichaVerde.gd")
 var ficha_marron = preload("res://Scripts/Fichas/FichaMarron.gd")
 var ficha_gris = preload("res://Scripts/Fichas/FichaGris.gd")
 
+onready var map = get_parent().get_child(1)
+onready var mano = get_child(0).get_child(0).get_child(0)
+
+var button_pressed:int
+#var selected_tile: int
 var rng = RandomNumberGenerator.new()
 
 
@@ -25,19 +30,15 @@ func pila():
 			Pilas.append(2)
 		else:
 			Pilas.append(3)
-
-
-		
+			
 		print(Pilas[i])
 
 func _ready():
 	pila()
 	for i in range(3):
-		print("recibo  el click" , i)
 		ManoPlayer(Pilas,i)
-		
-		
-func _process(delta):
+
+func _process(_delta):
 	NumeroPila()
 
 func ManoPlayer(Pila,i):
@@ -47,16 +48,12 @@ func ManoPlayer(Pila,i):
 		0:
 			if tipoFicha == 1:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_verde.new())
-				print("recibo  el click")
-				#$Panel/YSort/Mano/Opcion0.texture_focused = false
+
 			elif tipoFicha == 2:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_marron.new())
-				print("recibo  el click")
-				#$Panel/YSort/Mano/Opcion0.texture_focused = false
+
 			elif tipoFicha == 3:
 				$Panel/YSort/Mano/Opcion0.add_child(ficha_gris.new())
-				print("recibo  el click")
-				#$Panel/YSort/Mano/Opcion0.texture_focused = false
 			else:
 				pass
 			
@@ -78,15 +75,25 @@ func ManoPlayer(Pila,i):
 				$Panel/YSort/Mano/Opcion2.add_child(ficha_gris.new())
 			else:
 				pass
-		
-	
-	
-		
-
+				
 func NumeroPila():
 	$Panel/YSort/Pila/numPila.text = str(Pilas.size())
-	pass
 
-func ColocaFicha():
+
+
+func _on_Opcion0_pressed():
+	map.selected_tile = mano.get_child(0).get_child(0).tilemap_index
+	print(map.selected_tile)
+	button_pressed = 0
+
 	
-	pass
+func _on_Opcion1_pressed():
+	map.selected_tile = mano.get_child(1).get_child(0).tilemap_index
+	print(map.selected_tile)
+	button_pressed = 1
+
+func _on_Opcion2_pressed():
+	map.selected_tile = mano.get_child(2).get_child(0).tilemap_index
+	print(map.selected_tile)
+	button_pressed = 2
+

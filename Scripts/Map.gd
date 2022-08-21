@@ -54,6 +54,17 @@ func get_neighbours(pos: Vector2) -> Array:
 			Vector2(-1, 0) + pos,]
 		return n
 
-
+func LeveaFicha(Ficha):
+	var lvl: int = 0 
+	get_neighbours(Ficha)
+	var tamanio = get_neighbours(Ficha).size()
+	for i in range (tamanio):
+		if get_neighbours(Ficha)[i].tilemap_index == Ficha.tilemap_index:
+			lvl += 1
+		else:
+			lvl = lvl
+	
+	
+	pass
 			
 

@@ -6,6 +6,7 @@ var ficha_gris = preload("res://Scripts/Fichas/FichaGris.gd")
 
 var floating_text = preload("res://Scenes/FloatingText.tscn")
 
+
 onready var map = get_parent().get_child(1)
 onready var hand = get_child(0).get_child(0).get_child(0)
 
@@ -47,6 +48,7 @@ func _on_Opcion0_pressed():
 	print(map.selected_tile)
 	button_pressed = 0
 	PrintPoints()
+	
 
 	
 func _on_Opcion1_pressed():
@@ -91,4 +93,6 @@ func PrintPoints():
 	text.amount = 200#calculaPuntos()
 	text.type = "Verde"
 	add_child(text)
-	pass
+	
+
+	

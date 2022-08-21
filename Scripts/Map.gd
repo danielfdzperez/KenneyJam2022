@@ -3,6 +3,9 @@ extends TileMap
 onready var tile = preload("res://Tile.tscn")
 onready var HUD = get_parent().get_child(2)
 
+
+var arbol = preload("res://Scenes/EscenaArbol.tscn")
+
 export var map_size: Vector2 = Vector2 (4,4)
 var cmp
 var tiles = [] 
@@ -64,7 +67,13 @@ func LeveaFicha(Ficha):
 		else:
 			lvl = lvl
 	
-	
+	for i in range(lvl):
+		generaArbol(Ficha)	
+		
 	pass
 			
 
+func generaArbol(Ficha):
+	var arbolnuevo = arbol.instance()
+	add_child(arbolnuevo)
+	

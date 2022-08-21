@@ -46,7 +46,7 @@ func _on_Opcion0_pressed():
 	map.selected_tile = hand.get_child(0).get_child(0).tilemap_index
 	print(map.selected_tile)
 	button_pressed = 0
-	
+	PrintPoints()
 
 	
 func _on_Opcion1_pressed():
@@ -89,7 +89,7 @@ func _on_Opcion2_child_exiting_tree(_node):
 func PrintPoints():
 	var text = floating_text.instance()
 	text.amount = 200#calculaPuntos()
-	text.type = "Gris"	
+	text.type = "Verde"
 	add_child(text)
 	
 	pass

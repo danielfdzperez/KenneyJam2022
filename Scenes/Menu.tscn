@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Kenney_Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://recursos/PNG/Objects/windmill_base.png" type="Texture" id=3]
+[ext_resource path="res://recursos/PNG/Objects/windmill_complete.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+extra_spacing_bottom = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+extra_spacing_bottom = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MenuRoot" type="Control" parent="."]
+anchor_right = 0.997
+anchor_bottom = 1.0
+margin_right = 3.07196
+script = ExtResource( 1 )
+
+[node name="Menu0" type="MarginContainer" parent="MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuRoot/Menu0"]
+margin_right = 1023.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/Menu0/CenterContainer"]
+margin_left = 297.0
+margin_top = 35.0
+margin_right = 725.0
+margin_bottom = 565.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
+margin_right = 428.0
+margin_bottom = 14.0
+
+[node name="EnviMag" type="ToolButton" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 428.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 1 )
+text = "EnviMag"
+
+[node name="Start" type="ToolButton" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
+margin_top = 226.0
+margin_right = 428.0
+margin_bottom = 420.0
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+
+[node name="Credits" type="ToolButton" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
+margin_top = 424.0
+margin_right = 428.0
+margin_bottom = 460.0
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
+
+[node name="SoundButton" type="TextureButton" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
+margin_top = 464.0
+margin_right = 428.0
+margin_bottom = 530.0
+action_mode = 0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 4 )
+
+[node name="Menu1" type="MarginContainer" parent="MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1024.0
+margin_right = 1024.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MenuRoot/Menu1"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/Menu1/CenterContainer"]
+margin_left = 275.0
+margin_top = 121.0
+margin_right = 749.0
+margin_bottom = 479.0
+
+[node name="Credtis0" type="Label" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
+margin_right = 474.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 4 )
+text = "Daniel nojeke   _   Game Designer
+
+Gemma M. Rull  _   Producer
+
+jhonny canario   _  Sound Designer
+"
+
+[node name="Credits1" type="Label" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
+margin_top = 163.0
+margin_right = 474.0
+margin_bottom = 322.0
+custom_fonts/font = SubResource( 5 )
+text = "Juanma noseke  _  Game Programmer 
+
+Iago Aspas  _   Game  Programmer
+
+Urria Uzkost  _  Narrative
+"
+
+[node name="Back" type="ToolButton" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 474.0
+margin_bottom = 358.0
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+
+[node name="TextEdit" type="TextEdit" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 694.0
+text = "Daniel nojeke : Game Designer
+Gema Nojecuantos : Producer
+"
+
+[connection signal="pressed" from="MenuRoot/Menu0/CenterContainer/VBoxContainer/Start" to="MenuRoot" method="_on_Start_pressed"]
+[connection signal="pressed" from="MenuRoot/Menu0/CenterContainer/VBoxContainer/Credits" to="MenuRoot" method="_on_Credits_pressed"]
+[connection signal="pressed" from="MenuRoot/Menu1/CenterContainer/VBoxContainer/Back" to="MenuRoot" method="_on_Back_pressed"]

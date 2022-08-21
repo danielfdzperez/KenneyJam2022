@@ -15,18 +15,23 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 2 )
 
 [node name="GridContainer" type="GridContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 2.363
+anchor_bottom = 2.073
+margin_right = 0.287842
+margin_bottom = 0.199829
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 870.0, 1024.0 ]
+}
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 0.996078, 0.964706, 0.964706, 1 )
 self_modulate = Color( 0.278431, 0.882353, 0.109804, 1 )
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 2420.0
+margin_bottom = 1244.0
 rect_clip_content = true
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -34,53 +39,71 @@ size_flags_vertical = 3
 custom_styles/panel = SubResource( 3 )
 
 [node name="YSort" type="YSort" parent="Panel"]
+position = Vector2( 4, 4 )
 
 [node name="Hand" type="Panel" parent="Panel/YSort"]
-margin_left = 388.0
-margin_top = 387.0
-margin_right = 623.0
-margin_bottom = 573.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 989.0
+margin_top = 923.0
+margin_right = 1382.0
+margin_bottom = 1240.0
 
 [node name="Opcion0" type="CheckBox" parent="Panel/YSort/Hand"]
-margin_top = 68.0
-margin_right = 136.0
-margin_bottom = 208.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = -75.0
+margin_right = 200.0
+margin_bottom = 75.0
 rect_scale = Vector2( 0.5, 0.5 )
 action_mode = 0
 keep_pressed_outside = true
 
 [node name="Opcion1" type="CheckBox" parent="Panel/YSort/Hand"]
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 222.0
-margin_bottom = 212.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Opcion2" type="CheckBox" parent="Panel/YSort/Hand"]
-margin_left = 135.0
-margin_top = 68.0
-margin_right = 255.0
-margin_bottom = 208.0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -75.0
+margin_right = -50.0
+margin_bottom = 75.0
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Panel/YSort/Hand"]
 anchor_left = 0.013
 anchor_right = 0.706
 anchor_bottom = 0.149
-margin_left = 32.945
-margin_top = 4.0
-margin_right = 33.09
-margin_bottom = 140.286
+margin_left = 118.476
+margin_top = 241.0
+margin_right = 118.621
+margin_bottom = 377.286
 text = "Hola soy la mano  jeje
 "
 
 [node name="Pila" type="Panel" parent="Panel/YSort"]
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-margin_left = 5.0
-margin_top = 461.0
-margin_right = 155.0
-margin_bottom = 611.0
+anchor_bottom = 1.0
+margin_left = 87.0
+margin_top = 902.0
+margin_right = 230.0
+margin_bottom = 1049.0
 
 [node name="Sprite" type="Sprite" parent="Panel/YSort/Pila"]
 position = Vector2( 80, 78 )
@@ -88,19 +111,19 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
 [node name="numPila" type="Label" parent="Panel/YSort/Pila"]
-margin_left = 12.0
-margin_top = 89.0
-margin_right = 155.0
-margin_bottom = 196.0
+margin_left = 6.0
+margin_top = 73.0
+margin_right = 149.0
+margin_bottom = 180.0
 custom_fonts/font = SubResource( 1 )
 text = "33
 "
 
 [node name="Puntuacion" type="Panel" parent="Panel"]
-margin_left = 825.0
-margin_top = 12.0
-margin_right = 1028.0
-margin_bottom = 77.0
+margin_left = 1758.0
+margin_top = 60.0
+margin_right = 1961.0
+margin_bottom = 125.0
 
 [node name="ecopuntos" type="Label" parent="Panel/Puntuacion"]
 margin_left = 15.0

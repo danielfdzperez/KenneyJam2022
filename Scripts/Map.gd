@@ -3,10 +3,12 @@ extends TileMap
 onready var tile = preload("res://Tile.tscn")
 onready var HUD = get_parent().get_child(2)
 
-export var map_size: Vector2 = Vector2 (10,10)
+export var map_size: Vector2 = Vector2 (4,4)
 var cmp
 var tiles = [] 
 var selected_tile: int
+
+
 
 func _ready():
 	clear()
@@ -29,7 +31,7 @@ func _unhandled_input(event):
 				if get_cellv(i) > 0:
 					print(i)
 					set_cellv(cmp, selected_tile)
-					print(selected_tile)
+					print("pongo esta casilla  " ,selected_tile)
 					if HUD.hand.get_child(HUD.button_pressed).get_child(0) != null:
 						HUD.hand.get_child(HUD.button_pressed).get_child(0).queue_free()
 

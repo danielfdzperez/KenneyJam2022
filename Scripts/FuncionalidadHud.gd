@@ -4,6 +4,8 @@ var ficha_verde = preload("res://Scripts/Fichas/FichaVerde.gd")
 var ficha_marron = preload("res://Scripts/Fichas/FichaMarron.gd")
 var ficha_gris = preload("res://Scripts/Fichas/FichaGris.gd")
 
+var floating_text = preload("res://Scenes/FloatingText.tscn")
+
 onready var map = get_parent().get_child(1)
 onready var hand = get_child(0).get_child(0).get_child(0)
 
@@ -36,6 +38,7 @@ func _process(_delta):
 
 func NumeroPila():
 	$Panel/YSort/Pila/numPila.text = str(stack.size())
+	
 
 
 
@@ -43,6 +46,7 @@ func _on_Opcion0_pressed():
 	map.selected_tile = hand.get_child(0).get_child(0).tilemap_index
 	print(map.selected_tile)
 	button_pressed = 0
+	
 
 	
 func _on_Opcion1_pressed():
@@ -80,3 +84,12 @@ func _on_Opcion1_child_exiting_tree(_node):
 
 func _on_Opcion2_child_exiting_tree(_node):
 	map.selected_tile = draw_card(2)
+
+
+func PrintPoints():
+	var text = floating_text.instance()
+	text.amount = 200#calculaPuntos()
+	text.type = "Gris"	
+	add_child(text)
+	
+	pass

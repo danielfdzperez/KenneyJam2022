@@ -68,7 +68,7 @@ func LeveaFicha(Ficha):
 			lvl = lvl
 	
 	for i in range(lvl):
-		generaArbol(Ficha)	
+		generaArbol(Ficha)
 		
 	pass
 			

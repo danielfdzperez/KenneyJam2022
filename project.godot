@@ -45,6 +45,8 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+MusicaAmbiente="*res://Scenes/Musica_ambiente.tscn"
+GreenSound="res://Scenes/GreenSound.tscn"
 
 [display]
 

@@ -7,6 +7,7 @@ onready var HUD = get_parent().get_child(2)
 var arbol = preload("res://Scenes/EscenaArbol.tscn")
 var floating_text = preload("res://Scenes/FloatingText.tscn")
 
+
 export var map_size: Vector2 = Vector2 (10,8)
 var cmp
 var tiles = [] 
@@ -29,6 +30,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
+
 		put_card(cmp, selected_tile)
 
 func get_neighbours(pos: Vector2) -> Array:
@@ -55,7 +57,6 @@ func put_card(coord, tipo):
 			for i in get_neighbours(coord):
 				if get_cellv(i) > 0:
 					set_cellv(coord, tipo)
-
 					calculate_points(coord, tipo)
 					
 					var lvl: int = 0 
@@ -65,6 +66,7 @@ func put_card(coord, tipo):
 						instance_arbol(coord)
 						instance_arbol(coord)
 	
+
 					if HUD.hand.get_child(HUD.button_pressed).get_child(0) != null:
 						HUD.hand.get_child(HUD.button_pressed).get_child(0).queue_free()
 
@@ -93,4 +95,5 @@ func calculate_points(coord, tipo):
 	text.amount = p#calculaPuntos()
 	add_child(text)
 	HUD.points = str(int(HUD.points) + p)
+
 

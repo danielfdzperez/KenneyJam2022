@@ -88,16 +88,16 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/Menu1/CenterContainer"]
-margin_left = 275.0
+margin_left = 264.0
 margin_top = 121.0
-margin_right = 749.0
+margin_right = 760.0
 margin_bottom = 479.0
 
 [node name="Credtis0" type="Label" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
-margin_right = 474.0
+margin_right = 496.0
 margin_bottom = 159.0
 custom_fonts/font = SubResource( 4 )
-text = "Daniel nojeke   _   Game Designer
+text = "Daniel Fernandez   _   Game Designer
 
 Gemma M. Rull  _   Producer
 
@@ -106,19 +106,19 @@ jhonny canario   _  Sound Designer
 
 [node name="Credits1" type="Label" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
 margin_top = 163.0
-margin_right = 474.0
+margin_right = 496.0
 margin_bottom = 322.0
 custom_fonts/font = SubResource( 5 )
-text = "Juanma noseke  _  Game Programmer 
+text = "Juanma Alvarez  _  Game Programmer 
 
-Iago Aspas  _   Game  Programmer
+Iago Miguez Gude _   Game  Programmer
 
 Urria Uzkost  _  Narrative
 "
 
 [node name="Back" type="ToolButton" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]
 margin_top = 326.0
-margin_right = 474.0
+margin_right = 496.0
 margin_bottom = 358.0
 custom_fonts/font = SubResource( 6 )
 text = "Back"

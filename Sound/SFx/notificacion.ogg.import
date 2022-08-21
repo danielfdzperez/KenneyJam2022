@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/notificacion.ogg-2d6721a1068392cf61f5eefc1ffff362.oggstr"
+
+[deps]
+
+source_file="res://Sound/SFx/notificacion.ogg"
+dest_files=[ "res://.import/notificacion.ogg-2d6721a1068392cf61f5eefc1ffff362.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

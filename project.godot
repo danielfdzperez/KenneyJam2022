@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Nombre"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

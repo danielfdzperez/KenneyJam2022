@@ -91,5 +91,4 @@ func PrintPoints():
 	text.amount = 200#calculaPuntos()
 	text.type = "Verde"
 	add_child(text)
-	
 	pass

@@ -101,7 +101,7 @@ text = "Daniel Fernandez   _   Game Designer
 
 Gemma M. Rull  _   Producer
 
-jhonny canario   _  Sound Designer
+Jonatan Galindo   _  Sound Designer
 "
 
 [node name="Credits1" type="Label" parent="MenuRoot/Menu1/CenterContainer/VBoxContainer"]

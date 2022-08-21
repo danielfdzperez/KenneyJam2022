@@ -5,6 +5,7 @@ onready var HUD = get_parent().get_child(2)
 
 
 var arbol = preload("res://Scenes/EscenaArbol.tscn")
+var soundGreen = preload("res://Scenes/GreenSound.tscn")
 
 export var map_size: Vector2 = Vector2 (4,4)
 var cmp
@@ -29,6 +30,7 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
 		print("hola")
+#		genSoundGreen()
 		if get_cellv(cmp) == 0:
 			for i in get_neighbours(cmp):
 				if get_cellv(i) > 0:
@@ -76,4 +78,12 @@ func LeveaFicha(Ficha):
 func generaArbol(Ficha):
 	var arbolnuevo = arbol.instance()
 	add_child(arbolnuevo)
+	
+
+#func genSoundGreen():
+#	print("entro a sonido verde")
+#	var newsoundGreen = soundGreen.instance()
+#	print("stream del sonido" , newsoundGreen.stream("res://Sound/SFx/verde.ogg"))
+#	#$soundGeneral.add_child(newsoundGreen)
+#	print("el hijo con sonido ekis de -----", $soundGeneral.add_child(newsoundGreen))
 	

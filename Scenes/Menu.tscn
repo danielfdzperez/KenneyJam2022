@@ -46,9 +46,9 @@ margin_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/Menu0/CenterContainer"]
 margin_left = 297.0
-margin_top = 35.0
+margin_top = 70.0
 margin_right = 725.0
-margin_bottom = 565.0
+margin_bottom = 530.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -76,14 +76,6 @@ margin_right = 428.0
 margin_bottom = 460.0
 custom_fonts/font = SubResource( 3 )
 text = "Credits"
-
-[node name="SoundButton" type="TextureButton" parent="MenuRoot/Menu0/CenterContainer/VBoxContainer"]
-margin_top = 464.0
-margin_right = 428.0
-margin_bottom = 530.0
-action_mode = 0
-texture_normal = ExtResource( 3 )
-texture_focused = ExtResource( 4 )
 
 [node name="Menu1" type="MarginContainer" parent="MenuRoot"]
 anchor_right = 1.0
@@ -139,6 +131,17 @@ margin_bottom = 694.0
 text = "Daniel nojeke : Game Designer
 Gema Nojecuantos : Producer
 "
+
+[node name="Tween" type="Tween" parent="MenuRoot"]
+
+[node name="SoundButton" type="TextureButton" parent="MenuRoot"]
+margin_left = 950.0
+margin_top = 10.0
+margin_right = 1000.0
+margin_bottom = 76.0
+action_mode = 0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 4 )
 
 [connection signal="pressed" from="MenuRoot/Menu0/CenterContainer/VBoxContainer/Start" to="MenuRoot" method="_on_Start_pressed"]
 [connection signal="pressed" from="MenuRoot/Menu0/CenterContainer/VBoxContainer/Credits" to="MenuRoot" method="_on_Credits_pressed"]

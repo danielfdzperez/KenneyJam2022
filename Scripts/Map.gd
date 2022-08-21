@@ -5,8 +5,9 @@ onready var HUD = get_parent().get_child(2)
 
 
 var arbol = preload("res://Scenes/EscenaArbol.tscn")
+var floating_text = preload("res://Scenes/FloatingText.tscn")
 
-export var map_size: Vector2 = Vector2 (4,4)
+export var map_size: Vector2 = Vector2 (10,8)
 var cmp
 var tiles = [] 
 var selected_tile: int
@@ -28,15 +29,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.get_button_index() == 1 and !event.is_echo():
-		print("hola")
-		if get_cellv(cmp) == 0:
-			for i in get_neighbours(cmp):
-				if get_cellv(i) > 0:
-					print(i)
-					set_cellv(cmp, selected_tile)
-					print("pongo esta casilla  " ,selected_tile)
-					if HUD.hand.get_child(HUD.button_pressed).get_child(0) != null:
-						HUD.hand.get_child(HUD.button_pressed).get_child(0).queue_free()
+		put_card(cmp, selected_tile)
 
 func get_neighbours(pos: Vector2) -> Array:
 	if int(pos.y) % 2 != 0:
@@ -57,23 +50,47 @@ func get_neighbours(pos: Vector2) -> Array:
 			Vector2(-1, 0) + pos,]
 		return n
 
-func LeveaFicha(Ficha):
-	var lvl: int = 0 
-	get_neighbours(Ficha)
-	var tamanio = get_neighbours(Ficha).size()
-	for i in range (tamanio):
-		if get_neighbours(Ficha)[i].tilemap_index == Ficha.tilemap_index:
-			lvl += 1
-		else:
-			lvl = lvl
-	
-	for i in range(lvl):
-		generaArbol(Ficha)	
-		
-	pass
-			
+func put_card(coord, tipo):
+	if get_cellv(coord) == 0:
+			for i in get_neighbours(coord):
+				if get_cellv(i) > 0:
+					set_cellv(coord, tipo)
 
-func generaArbol(Ficha):
-	var arbolnuevo = arbol.instance()
-	add_child(arbolnuevo)
+					calculate_points(coord, tipo)
+					
+					var lvl: int = 0 
+			for j in get_neighbours(coord):
+				if get_cellv(j) == tipo:
+					if tipo == 1:
+						instance_arbol(coord)
+						instance_arbol(coord)
 	
+					if HUD.hand.get_child(HUD.button_pressed).get_child(0) != null:
+						HUD.hand.get_child(HUD.button_pressed).get_child(0).queue_free()
+
+func instance_arbol(coord):
+	var arbolnuevo = arbol.instance()
+	arbolnuevo.position = map_to_world(coord)
+	get_child(0).add_child(arbolnuevo)
+
+func calculate_points(coord, tipo):
+	var text = floating_text.instance()
+	text.position = map_to_world(coord)
+	text.position += Vector2(60, 70)
+	var p = 0 #points
+	if tipo == 1:
+		p = 100
+		text.type = "Verde"
+	elif tipo == 2:
+		p = 50
+	elif tipo == 3:
+		p = 0
+		text.type = "Gris"
+	elif tipo == 4:
+		p = 10
+	else:
+		return
+	text.amount = p#calculaPuntos()
+	add_child(text)
+	HUD.points = str(int(HUD.points) + p)
+

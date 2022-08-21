@@ -10,6 +10,7 @@ script = ExtResource( 1 )
 polygon = PoolVector2Array( 0, 35, 60, 0, 120, 35, 120, 105, 60, 140, 0, 105 )
 
 [node name="Polygon2D" type="Polygon2D" parent="HexagonCollision"]
+visible = false
 modulate = Color( 1, 1, 1, 0.196078 )
 polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 script = ExtResource( 2 )

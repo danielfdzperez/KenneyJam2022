@@ -9,12 +9,13 @@ var type = ""
 
 
 func _ready():
+
 	label.set_text(str(amount))
 	match type:
 		"Verde":
 			label.set("custom_color/font_color",Color("68a546"))
-		"Griss":
-			label.set("custom_color/font_color",Color("636362"))
+		"Gris":
+			label.set("custom_color/font_color",Color("9B9B9B"))
 		
 					
 			
